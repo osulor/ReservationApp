@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = this.getSharedPreferences("com.example.reservationapp",
                              Context.MODE_PRIVATE)
 
-       // editorPreferences = sharedPreferences.edit()
+        editorPreferences = sharedPreferences.edit()
 
         submit_button.setOnClickListener {
 
@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
           //val date = date_text.text.toString()
            val infos = userCount.toString() + " - Name: " + name + " | Room Number: " + roomNumber
 
-            sharedPreferences.edit().putString(userNumber + userCount,infos)
-            sharedPreferences.edit().commit()
+            editorPreferences.putString(userNumber + userCount,infos)
+            editorPreferences.commit()
             Toast.makeText(this,"Successfull Reservation for user " + userCount,Toast.LENGTH_LONG).show()
-            sharedPreferences.edit().putInt(USERCOUNT, userCount)
-            sharedPreferences.edit().commit()
+            editorPreferences.putInt(USERCOUNT, userCount)
+            editorPreferences.commit()
             //displayExistingUsers()
             clearText()
         }
@@ -63,21 +63,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    private fun displayExistingUsers() {
-//
-//        if (userCount > 0) {
-//            val myUsers = StringBuilder()
-//            for (i in 0 until userCount) {
-//                val user = sharedPreferences.getString(userNumber + i, "FAILED")
-//                myUsers.append(user + "\n")
-//            }
-//
-//            infotext.setText(myUsers)
-//
-//        } else {
-//            infotext.text = "No users in"
-//        }
-//    }
 
 
 }

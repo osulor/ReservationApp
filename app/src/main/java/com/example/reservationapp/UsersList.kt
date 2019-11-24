@@ -30,7 +30,7 @@ class UsersList : AppCompatActivity() {
     }
 
     private fun displayExistingUsers() {
-        Toast.makeText(this,MainActivity.userCount.toString(),Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Current users count is " + MainActivity.userCount.toString(),Toast.LENGTH_LONG).show()
         if (MainActivity.userCount > 0) {
             val myUsers = StringBuilder()
             for (i in 1 until MainActivity.userCount) {
